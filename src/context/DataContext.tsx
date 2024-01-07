@@ -58,7 +58,7 @@ const DataContextProvider: React.FC<DataContextProviderProps> = ({ children }) =
     useEffect(() => {
         const allProductsData = data
         const availableNowData = allProductsData.filter((item: dataItem) => item.available)
-        switchValue === "all products" ? setDataToDisplay(allProductsData) : setDataToDisplay(availableNowData)
+        switchValue === "all-products" ? setDataToDisplay(allProductsData) : setDataToDisplay(availableNowData)
     }, [data, switchValue])
 
     return (

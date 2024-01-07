@@ -1,3 +1,77 @@
-.heading {
-  color: var(--red);
+.layout {
+  display: flex;
+  justify-content: center;
+  background-color: var(--darkerBlack);
+  width: 100dvw;
+  min-height: 100dvh;
+  padding: 150px 0;
+}
+
+.container {
+  background-color: var(--lighterBlack);
+  width: 70%;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 90px 30px;
+}
+
+.headingsAndBtnsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* background-color: var(--red); */
+}
+
+.headingsAndBtnsContainer > h1 {
+  color: var(--white);
+  font-size: var(--heading);
+  text-align: center;
+  font-weight: 500;
+}
+
+.headingsAndBtnsContainer > h2 {
+  color: var(--grey);
+  font-size: var(--body);
+  text-align: center;
+  font-weight: normal;
+  line-height: 1.4rem;
+}
+
+.btnsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  /* background-color: red; */
+}
+
+.switchBtn {
+  padding: 8px 12px;
+  background-color: var(--lighterBlack);
+  border: none;
+  font-size: var(--label);
+  font-weight: 500;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.selectedBtn {
+  background-color: var(--grey);
+  border-radius: 8px;
+}
+
+/* tablet styles */
+@media only screen and (min-width: 640px) {
+  .container {
+    width: 80%;
+    max-width: 700px;
+  }
+}
+
+/* desktop styles */
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 90%;
+    max-width: 1200px;
+  }
 }

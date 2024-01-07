@@ -2,16 +2,16 @@ import React, { createContext, useContext, useState, ReactNode } from "react"
 
 type SwitchContextType = {
     switchValue: SwitchType,
-    toggleSwitch?: (value: SwitchType) => void
+    setSwitchValue: React.Dispatch<React.SetStateAction<SwitchType>>
 }
 
-export type SwitchType = "all products" | "available now"
+export type SwitchType = "all-products" | "available-now"
 
 type SwitchContextProviderProps = {
     children: ReactNode
 }
 
-const SwitchContext = createContext<SwitchContextType>({ switchValue: "all products" })
+const SwitchContext = createContext<SwitchContextType>({ switchValue: "all-products", setSwitchValue: () => {}})
 
 export const useSwitch = () => {
     return useContext(SwitchContext)
@@ -19,15 +19,15 @@ export const useSwitch = () => {
 
 const SwitchContextProvider: React.FC<SwitchContextProviderProps> = ({ children }) => {
 
-    const [switchValue, setSwitchValue] = useState<SwitchType>("all products")
+    const [switchValue, setSwitchValue] = useState<SwitchType>("all-products")
 
-    const toggleSwitch = (value: SwitchType) => {
-        setSwitchValue(value)
-    }
+    // const toggleSwitch = (value: SwitchType) => {
+    //     setSwitchValue(value)
+    // }
 
     const valueObj: SwitchContextType = {
         switchValue,
-        toggleSwitch
+        setSwitchValue
     }
 
     return (
