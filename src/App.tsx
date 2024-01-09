@@ -3,6 +3,9 @@ import classNames from "classnames"
 import styles from './App.module.css'
 import { useSwitch, SwitchType } from './context/SwitchContext'
 import { useData } from './context/DataContext'
+import BannerImg from "./assets/imgs/bg-cafe.jpg"
+import VectorImg from "./assets/imgs/vector.svg"
+import Card from "./components/Card"
 
 const App: React.FC = () => {
 
@@ -15,12 +18,30 @@ const App: React.FC = () => {
     setSwitchValue(buttonID)
   }
 
-
   return (
     <div className={styles.layout}>
+
+      <div
+        className={styles.banner}
+        style={{
+          background: `url(${BannerImg})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      />
+
       <div className={styles.container}>
 
         <div className={styles.headingsAndBtnsContainer}>
+
+          <div
+            className={styles.vector}
+            style={{
+              background: `url(${VectorImg})`,
+              backgroundRepeat: "no-repeat"
+            }}
+          />
+
           <h1>Our Collection</h1>
           <h2>Introducing our Coffee Collection, a selection of unique coffees from different roast types and origins, expertly roasted in small batches and shipped fresh weekly.</h2>
 
@@ -44,14 +65,14 @@ const App: React.FC = () => {
 
         </div>
 
-        {dataToDisplay && dataToDisplay.map(item => {
-          const { id, name, image, price, rating, votes, popular, available } = item
-          return (
-            <div key={id}>
-              <h1>{name}</h1>
-            </div>
-          )
-        })}
+        <div className={styles.cardContainer}>
+          {dataToDisplay && dataToDisplay.map(item => {
+            return (
+              <Card key={item.id} item={item} />
+            )
+          })}
+        </div>
+
       </div>
     </div>
 

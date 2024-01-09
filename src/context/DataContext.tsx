@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react"
 import { useSwitch } from "./SwitchContext"
 
-type DataType = never[] | dataItem[]
+type DataType = never[] | DataItem[]
 
 type DataContextProviderProps = {
     children: ReactNode
 }
 
-type dataItem = {
+export type DataItem = {
     id: number,
     name: string,
     image: string,
@@ -57,7 +57,7 @@ const DataContextProvider: React.FC<DataContextProviderProps> = ({ children }) =
 
     useEffect(() => {
         const allProductsData = data
-        const availableNowData = allProductsData.filter((item: dataItem) => item.available)
+        const availableNowData = allProductsData.filter((item: DataItem) => item.available)
         switchValue === "all-products" ? setDataToDisplay(allProductsData) : setDataToDisplay(availableNowData)
     }, [data, switchValue])
 

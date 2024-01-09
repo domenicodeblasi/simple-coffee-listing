@@ -1,0 +1,75 @@
+.card {
+    width: 100%;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.imgAndPopularTagContainer {
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.popularTag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: var(--smallText);
+    font-weight: 500;
+    background-color: var(--yellow);
+    padding: 3px 12px;
+    border-radius: 10px;
+}
+
+.titleAndPriceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: var(--white);
+    font-weight: 400;
+}
+
+.price {
+    background-color: var(--green);
+    padding: 4px 8px;
+    font-size: var(--priceText);
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.cardThirdSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.starRatingAndVotesContainer {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.rating {
+    color: var(--white);
+}
+
+.votes,
+.noRatingsTag {
+    font-size: var(--label);
+    color: var(--grey);
+    font-weight: 500;
+}
+
+.soldOutTag {
+    font-weight: 500;
+    color: var(--red);
+    font-size: var(--label);
+}
